@@ -55,4 +55,4 @@ The drawLoop() repeatedly calls drawScreen(), which clears the terminal and prin
 Stopping the Animation:
 When the user presses Enter, the stop() function is called, setting the atomic flag to false. This causes all worker threads to finish their execution, and the program exits cleanly.
 
-<img src="https://github.com/G00405094/DigitalRain/blob/main/docs/assets/images/download.png" width="400" height="300">
+<img src="https://github.com/G00405094/DigitalRain/blob/main/docs/assets/images/RainImage.jpg" width="400" height="300">
