@@ -5,39 +5,33 @@ tags: cpp coding project
 categories: demo
 ---
 
-Project Overview
+##Project Overview
 The project is split into three main files:
 
 DigitalRain.h
-Contains the class declaration. This file defines the DigitalRain class, which manages all aspects of the animation—from generating random characters to drawing them on the screen. It includes constructors (default, parameterized, and copy), a destructor, and even an overloaded operator+ to merge two DigitalRain objects, showcasing some basic operator overloading.
+Contains the class declaration. This file defines the DigitalRain class, which manages all aspects of the animation—from generating random characters to drawing them on the screen. It includes constructors (default and copy), a destructor, and an overloaded operator+ to merge two DigitalRain objects.
 
 DigitalRain.cpp
-Implements everything declared in the header file. This is where the magic happens. The code sets up a screen buffer (using a vector of strings), initializes the random number generator, and launches asynchronous tasks. Each column of the digital rain is animated by a separate thread, creating an independent "drip" effect. A dedicated drawing loop continuously refreshes the screen with the updated buffer, ensuring a smooth animation.
+Implements everything declared in the header file. The code sets up a screen buffer (using a vector of strings), initializes the random number generator, and launches asynchronous tasks. Each column of the digital rain is animated by a separate thread, creating an independent "drip" effect. A dedicated drawing loop continuously refreshes the screen with the updated buffer, ensuring a smooth animation.
 
 main.cpp
 Serves as the entry point for the program. It creates an instance of the DigitalRain class, starts the animation, waits for the user to press Enter, and then gracefully stops the animation.
 
 Key Features
 Multi-threaded Animation:
-Each column of falling characters is handled by its own asynchronous task. This means that the rain effect is not only visually appealing but also a practical example of how to use multithreading in C++.
+Each column of falling characters is handled by its own asynchronous task. 
 
 Robust Randomness:
 Instead of using the outdated rand() function, DigitalRain uses the Mersenne Twister (std::mt19937) to generate truly random characters. This ensures a better distribution of characters and a more natural rain effect.
 
 Dynamic Screen Buffer:
-The screen is represented as a vector of strings, with each string representing a row of characters. This simple yet effective design allows the program to easily update and redraw the screen.
+The screen is represented as a vector of strings, with each string representing a row of characters. This allows the program to easily update and redraw the screen.
 
 Thread Safety:
 Since multiple threads are updating the screen buffer concurrently, the project uses mutexes (std::mutex) to ensure that these updates are done safely without any conflicts or data corruption.
 
-Customizable Animation:
-You can tweak several parameters:
-
-Screen Dimensions: Set the width and height of the animation.
-Drip Speed & Tail Length: Adjust the speed of the falling characters and the length of the trailing effect.
-Spacing: Characters can be printed with extra spacing to change the overall look of the digital rain.
 Operator Overloading:
-As a demonstration of object-oriented programming, the operator+ function merges two DigitalRain objects by combining their screen buffers in an alternating pattern.
+The operator+ function merges two DigitalRain objects by combining their screen buffers in an alternating pattern.
 
 How It Works
 Initialization:
