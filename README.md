@@ -1,9 +1,3 @@
----
-layout: post
-title: A Project in Modern C++
-tags: cpp coding project
-categories: demo
----
 
 ## Introduction
 The Matrix digital rain is an effect of glowing green characters streaming down a black screen and is one of cinema’s most iconic visuals. This project set out to recreate that effect in C++ as a way to exercise modern C++ features and good design practices. The result is a console-based digital rain simulation that mimics the classic code rain from The Matrix. 
