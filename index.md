@@ -9,6 +9,8 @@ In this project, I created the "digital rain" effect as a console animation in C
 Class Design: The core of the project is the DigitalRain class, which manages the rain animation. To follow good software engineering practices, it encapsulates all data and behavior related to the effect, only exposing the interface (startRain() to begin the animation) while hiding internal details​ [4]. This follows the Single Responsibility Principle: the class deals only with the simulation of the rain and nothing else. DigitalRain has two buffers (2D arrays of Pixel) to represent the screen. Each buffer is a std::vector<std::vector<Pixel>>, which is a dynamic 2D array for console rows and columns. Using std::vector for the buffers automatically manages memory, which uses RAII to avoid manual new/delete and prevent memory leaks​ [6]. 
 I defined simple structs for the data elements:
 
+<img src="https://raw.githubusercontent.com/G00405094/DigitalRain/main/docs/assets/images/pixel struct.png" width="400" height="300">
+
 Pixel – represents a single character cell in the console. It holds the character to display and attributes like its color or brightness.
 
 Column – represents a stream of characters (a falling column in the digital rain). It contains state needed for the rain logic, such as the column's x-position, the current head which is the newest character position in that column, and any timing or delay parameters for when the column resets or a new head appears.
