@@ -6,4 +6,4 @@ author:
 description: "Digital Rain Project."
 
 # Build settings
-remote_theme: jekyll/minima
+remote_theme: jekyll/minimal-mistakes
