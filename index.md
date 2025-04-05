@@ -42,6 +42,9 @@ Assignment Operator: Similar to copy constructor, I overload the assignment oper
 
 Exception Handling: The code is written to throw exceptions if it can't use necessary resources or if used incorrectly. The tests catch these exceptions to confirm that the error handling path works and that no resources (like threads) are left dangling. Because the design relies on RAII, if an exception is thrown during initialisation or copying, all owned resources are released automatically by destructors during stack unwinding​ [6]. This greatly simplifies error handling, e.g if buffer allocation failed, the std::vector would free any partially allocated memory on its own.
 
+<img src="https://raw.githubusercontent.com/G00405094/DigitalRain/main/docs/assets/images/UMG.drawio.png" width="400" height="300">
+
+
 ## Algorithm – Simulating the Rain
 
 <img src="https://raw.githubusercontent.com/G00405094/DigitalRain/main/docs/assets/images/RenderLoop.png" width="400" height="300">
