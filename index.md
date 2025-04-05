@@ -37,6 +37,9 @@ Assignment Operator: Similar to copy constructor, I overload the assignment oper
 Exception Handling: I simulate error cases such as attempting to start the animation on an excessively large console size or forcing memory allocation failures. The code is written to throw exceptions if it can't use necessary resources or if used incorrectly. The tests catch these exceptions to confirm that the error handling path works and that no resources (like console handles or threads) are left dangling. Because the design relies on RAII, if an exception is thrown during initialisation or copying, all owned resources are released automatically by destructors during stack unwinding​ [8]. This greatly simplifies error handling, e.g if buffer allocation failed, the std::vector would free any partially allocated memory on its own.
 
 ## Algorithm – Simulating the Rain
+
+<img src="https://raw.githubusercontent.com/G00405094/DigitalRain/main/docs/assets/images/RenderLoop.png" width="400" height="300">
+
 The animation logic simulates falling streams of characters across the console window. The console screen is a grid of characters. Each column on the screen behaves like an independent "rain stream" of characters that continuously falls from top to bottom. 
 Here is how the algorithm works step by step:
 Initialization: When the DigitalRain object is created, it initialises its internal state:
